@@ -104,6 +104,7 @@ INDENT_SIZE = 4
 REPORT_FORMAT = {
     'default': '%(path)s:%(row)d:%(col)d: %(code)s %(text)s',
     'pylint': '%(path)s:%(row)d: [%(code)s] %(text)s',
+    'sarif': 'sarif',
 }
 
 PyCF_ONLY_AST = 1024
@@ -2768,7 +2769,8 @@ def get_parser(prog='pycodestyle', version=__version__):
                       help="hang closing bracket instead of matching "
                            "indentation of opening bracket's line")
     parser.add_option('--format', metavar='format', default='default',
-                      help="set the error format [default|pylint|<custom>]")
+                      help="set the error format "
+                      "[default|pylint|sarif|<custom>]")
     parser.add_option('--diff', action='store_true',
                       help="report changes only within line number ranges in "
                            "the unified diff received on STDIN")
