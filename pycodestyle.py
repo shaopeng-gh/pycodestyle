@@ -2477,8 +2477,6 @@ class StandardReport(BaseReport):
                 if message.rule_level != 'warning':
                     new_rule['defaultConfiguration'] = {
                         'level': message.rule_level}
-                new_rule['helpUri'] = 'https://pycodestyle.pycqa.org/'\
-                    'en/latest/intro.html#error-codes'
                 rules.append(new_rule)
                 rule_index = len(rules) - 1
             else:
