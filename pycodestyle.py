@@ -2398,8 +2398,8 @@ class StandardReport(BaseReport):
 
     def print_sarif_report(self):
         sarif = {
-            "$schema": "https://schemastore.azurewebsites.net/" +
-            "schemas/json/sarif-2.1.0-rtm.5.json",
+            "$schema": ("https://schemastore.azurewebsites.net/schemas/"
+                        "json/sarif-2.1.0-rtm.5.json"),
             "version": "2.1.0",
             "runs": [
                 {
@@ -2416,9 +2416,7 @@ class StandardReport(BaseReport):
                                     },
                                     "defaultConfiguration": {
                                         "level": "error"
-                                    },
-                                    "helpUri": "https://pycodestyle.pycqa" +
-                                    ".org/en/latest/intro.html#error-codes"
+                                    }
                                 }
                             ]
                         }
@@ -2441,15 +2439,14 @@ class StandardReport(BaseReport):
                                             "startLine": 2,
                                             "startColumn": 7,
                                             "snippet": {
-                                                "text":
-                                                    "\tprint b  # indented..."
+                                                "text": "\tprint b  # ind..."
                                             }
                                         },
                                         "contextRegion": {
                                             "snippet": {
-                                                "text": "print a  # indented" +
-                                                " with 8 spaces\n" +
-                                                "\tprint b  # indented..."
+                                                "text": ("print a  # indented"
+                                                         " with 8 spaces\n"
+                                                         "\tprint b  # ind...")
                                             }
                                         }
                                     }
